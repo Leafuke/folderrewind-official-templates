@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FolderRewind Official Template Envelope",
+  "type": "object",
+  "required": ["Magic", "SchemaVersion", "Template"],
+  "properties": {
+    "Magic": {
+      "type": "string",
+      "const": "FolderRewindTemplate"
+    },
+    "SchemaVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ExportedAtUtc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "Template": {
+      "type": "object",
+      "required": ["Id", "TemplateId", "ShareCode", "Name", "Description", "Version", "BaseConfigType", "PathRules"],
+      "properties": {
+        "Id": { "type": "string", "minLength": 1 },
+        "ShareId": { "type": "string" },
+        "TemplateId": { "type": "string", "minLength": 1 },
+        "ShareCode": {
+          "type": "string",
+          "pattern": "^[A-HJ-NP-Z2-9]{5}$"
+        },
+        "Name": { "type": "string", "minLength": 1 },
+        "Author": { "type": "string" },
+        "Description": { "type": "string", "minLength": 1 },
+        "GameName": { "type": "string" },
+        "SteamAppId": { "type": ["integer", "null"] },
+        "Version": { "type": "string", "minLength": 1 },
+        "BaseConfigType": { "type": "string", "minLength": 1 },
+        "RequiredPluginIds": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "PathRules": {
+          "type": "array",
+          "minItems": 1
+        }
+      }
+    }
+  }
+}
