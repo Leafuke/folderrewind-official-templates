@@ -1,5 +1,22 @@
 {
   "schemaVersion": "1.0",
-  "generatedAtUtc": "2026-03-20T01:17:40Z",
-  "templates": []
+  "generatedAtUtc": "2026-03-20T04:52:13Z",
+  "templates": [
+    {
+      "shareCode": "Z2HJ6",
+      "templateId": "53e8ddc509064382978e6689e111f065",
+      "name": "测试配置1",
+      "author": "Leaf",
+      "description": "111",
+      "gameName": "",
+      "steamAppId": null,
+      "version": "1.0",
+      "updatedUtc": "2026-03-20T04:33:24.6387795Z",
+      "baseConfigType": "Default",
+      "requiredPluginIds": [],
+      "fileUrl": "templates/Z2HJ6.json",
+      "sha256": "2C4E3ECA070372E515173A2296159A69F46F3569C10AD4EC70736C5F77EFA200",
+      "isDisabled": false
+    }
+  ]
 }
