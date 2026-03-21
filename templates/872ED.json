@@ -1,0 +1,107 @@
+{
+  "Magic": "FolderRewindTemplate",
+  "SchemaVersion": "1.0",
+  "ExportedAtUtc": "2026-03-21T07:20:22.8889452Z",
+  "Template": {
+    "Id": "b4e55a131e894b85b2235d151902b262",
+    "ShareId": "a5285c1aee204a48a0bb7f5c06768c93",
+    "TemplateId": "a5285c1aee204a48a0bb7f5c06768c93",
+    "ShareCode": "872ED",
+    "Name": "Minecraft\u5B98\u65B9\u542F\u52A8\u5668",
+    "Author": "Leafuke",
+    "Description": "\u81EA\u52A8\u8BC6\u522BJava\u7248\u5B98\u65B9\u542F\u52A8\u5668\u7684MC\u5B58\u6863\uFF01\u4F9D\u8D56MineRewind\u63D2\u4EF6\u3002",
+    "GameName": "Minecraft",
+    "SteamAppId": null,
+    "Version": "1.0",
+    "BaseConfigType": "Minecraft Saves",
+    "IsEncrypted": false,
+    "IconGlyph": "\uE80F",
+    "DefaultConfigName": "Minecraft\u5B98\u65B9\u542F\u52A8\u5668",
+    "CreatedUtc": "2026-03-21T07:02:13.6370333Z",
+    "UpdatedUtc": "2026-03-21T07:09:48.7257246Z",
+    "Archive": {
+      "Format": "7z",
+      "CompressionLevel": 3,
+      "Method": "LZMA2",
+      "KeepCount": 10,
+      "Mode": 0,
+      "SkipIfUnchanged": true,
+      "CpuThreads": 0,
+      "BackupBeforeRestore": false,
+      "SafeRestoreEnabled": true,
+      "VerifyArchiveBeforeRestore": true,
+      "MaxSmartBackupsPerFull": 5,
+      "SafeDeleteEnabled": true,
+      "FileTypeHandlingEnabled": false,
+      "FileTypeRules": []
+    },
+    "Automation": {
+      "AutoBackupEnabled": false,
+      "IntervalMode": true,
+      "IntervalMinutes": 60,
+      "RunOnAppStart": false,
+      "ScheduledMode": false,
+      "ScheduledHour": 3,
+      "ScheduleEntries": [],
+      "LastAutoBackupUtc": "0001-01-01T00:00:00",
+      "LastScheduledRunDateLocal": "0001-01-01T00:00:00",
+      "StopAfterNoChangeEnabled": false,
+      "StopAfterNoChangeCount": 3,
+      "ConsecutiveNoChangeCount": 0
+    },
+    "Filters": {
+      "Blacklist": [
+        "session.lock",
+        "voxy"
+      ],
+      "UseRegex": false,
+      "RestoreWhitelist": [
+        "session.lock",
+        "voxy"
+      ]
+    },
+    "Cloud": {
+      "Enabled": false,
+      "CommandMode": 0,
+      "TemplateKind": 0,
+      "ExecutablePath": "rclone.exe",
+      "ArgumentsTemplate": "copyto \u0022{ArchiveFilePath}\u0022 \u0022{RemoteBasePath}/{ConfigName}/{FolderName}/{ArchiveFileName}\u0022",
+      "WorkingDirectory": "",
+      "TimeoutSeconds": 600,
+      "RetryCount": 0,
+      "RemoteBasePath": "remote:FolderRewind",
+      "LastRunUtc": "0001-01-01T00:00:00",
+      "LastExitCode": 0,
+      "LastErrorMessage": ""
+    },
+    "ExtendedProperties": {},
+    "RequiredPluginIds": [],
+    "PathRules": [
+      {
+        "Id": "fc97f199dc8c40e1b7dce0d31a5d392b",
+        "Name": "\u53E6\u4E00\u4E2A\u4E16\u754C\uFF08\u96C6\u5408\u5339\u914D\uFF09",
+        "Segments": [
+          {
+            "Type": 1,
+            "Value": "AppDataRoaming"
+          },
+          {
+            "Type": 0,
+            "Value": ".minecraft"
+          },
+          {
+            "Type": 0,
+            "Value": "saves"
+          },
+          {
+            "Type": 2,
+            "Value": "*"
+          }
+        ],
+        "Markers": [],
+        "Confidence": 0.68,
+        "AutoAdd": true
+      }
+    ]
+  }
+}
