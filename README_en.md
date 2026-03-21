@@ -1,4 +1,4 @@
-﻿[简体中文](README.md) | English
+﻿[简体中文](README.md) | **English**
 
 # FolderRewind Official Templates
 
@@ -10,7 +10,7 @@ FolderRewind supports saving existing configurations as templates for repeated u
 
 ## Repository Layout
 
-`	ext
+```
 folderrewind-official-templates/
 ├── templates/                     # Reviewed template files, one file per share code
 ├── index.json                     # Lightweight client index consumed by FolderRewind
@@ -23,7 +23,7 @@ folderrewind-official-templates/
     │   ├── validate-template.yml
     │   └── rebuild-index.yml
     └── PULL_REQUEST_TEMPLATE.md
-`
+```
 
 ## Publishing Rules
 

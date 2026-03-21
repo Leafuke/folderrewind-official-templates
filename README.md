@@ -1,4 +1,4 @@
-﻿简体中文 | [English](README_en.md)
+﻿**简体中文** | [English](README_en.md)
 
 # FolderRewind 官方模板库
 
@@ -10,7 +10,7 @@ FolderRewind 支持将现有配置保存为模板供后续反复使用，并支�
 
 ## 仓库结构
 
-`	ext
+```
 folderrewind-official-templates/
 ├── templates/                     # 已通过审核的模板文件，每个分享码对应一个文件
 ├── index.json                     # 供 FolderRewind 客户端读取的轻量级索引文件
@@ -23,7 +23,7 @@ folderrewind-official-templates/
     │   ├── validate-template.yml
     │   └── rebuild-index.yml
     └── PULL_REQUEST_TEMPLATE.md
-`
+```
 
 ## 发布与合规规则
 
