@@ -1,5 +1,38 @@
 {
   "schemaVersion": "1.0",
-  "generatedAtUtc": "2026-03-19T14:53:33Z",
-  "templates": []
+  "generatedAtUtc": "2026-03-21T07:20:53Z",
+  "templates": [
+    {
+      "shareCode": "Z2HJ6",
+      "templateId": "53e8ddc509064382978e6689e111f065",
+      "name": "测试配置1",
+      "author": "Leaf",
+      "description": "111",
+      "gameName": "",
+      "steamAppId": null,
+      "version": "1.0",
+      "updatedUtc": "2026-03-20T04:33:24.6387795Z",
+      "baseConfigType": "Default",
+      "requiredPluginIds": [],
+      "fileUrl": "templates/Z2HJ6.json",
+      "sha256": "2C4E3ECA070372E515173A2296159A69F46F3569C10AD4EC70736C5F77EFA200",
+      "isDisabled": false
+    },
+    {
+      "shareCode": "872ED",
+      "templateId": "a5285c1aee204a48a0bb7f5c06768c93",
+      "name": "Minecraft官方启动器",
+      "author": "Leafuke",
+      "description": "自动识别Java版官方启动器的MC存档！依赖MineRewind插件。",
+      "gameName": "Minecraft",
+      "steamAppId": null,
+      "version": "1.0",
+      "updatedUtc": "2026-03-21T07:09:48.7257246Z",
+      "baseConfigType": "Minecraft Saves",
+      "requiredPluginIds": [],
+      "fileUrl": "templates/872ED.json",
+      "sha256": "B115145584FB588823B7E3B009B4F2CE6E652079E4F1857B0678D4EA6462106D",
+      "isDisabled": false
+    }
+  ]
 }
