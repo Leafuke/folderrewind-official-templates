@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAtUtc": "2026-04-16T11:15:48Z",
+  "generatedAtUtc": "2026-04-16T11:35:10Z",
   "templates": [
     {
       "shareCode": "Z2HJ6",
@@ -43,11 +43,11 @@
       "gameName": "Minecraft",
       "steamAppId": null,
       "version": "1.0",
-      "updatedUtc": "2026-04-16T11:13:32.057907Z",
+      "updatedUtc": "2026-04-16T11:33:55.2453929Z",
       "baseConfigType": "Minecraft Saves",
       "requiredPluginIds": [],
       "fileUrl": "templates/CS8LQ.json",
-      "sha256": "1CE39527577FDB849EF65124DFAF35B4A6E961A22EDAB5C4A10666A5F2A28CE5",
+      "sha256": "A603AF777EC9F950114964ACF3B1F157F8C5E4BE914B30EBF8A8CE5B2C679A82",
       "isDisabled": false
     }
   ]
