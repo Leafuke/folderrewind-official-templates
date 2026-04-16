@@ -1,7 +1,7 @@
 {
   "Magic": "FolderRewindTemplate",
   "SchemaVersion": "1.0",
-  "ExportedAtUtc": "2026-04-16T11:15:07.2764676Z",
+  "ExportedAtUtc": "2026-04-16T11:34:26.2227371Z",
   "Template": {
     "Id": "350ad9c1633840208ad6ceac2418671a",
     "ShareId": "799f5aaed5564776b0d68f4f15cc8421",
@@ -18,7 +18,7 @@
     "IconGlyph": "\uE7C1",
     "DefaultConfigName": "PCL",
     "CreatedUtc": "2026-04-16T11:13:07.1697433Z",
-    "UpdatedUtc": "2026-04-16T11:13:32.057907Z",
+    "UpdatedUtc": "2026-04-16T11:33:55.2453929Z",
     "Archive": {
       "Format": "7z",
       "CompressionLevel": 5,
@@ -92,11 +92,152 @@
     "PathRules": [
       {
         "Id": "c404eb286f464d1483dc43721e582945",
-        "Name": "PCL2",
+        "Name": "PCL2\u7248\u672C\u9694\u79BB\u89C4\u5219",
         "Segments": [
           {
             "Type": 3,
             "Value": "Plain Craft Launcher 2.exe"
+          },
+          {
+            "Type": 0,
+            "Value": ".minecraft"
+          },
+          {
+            "Type": 0,
+            "Value": "versions"
+          },
+          {
+            "Type": 2,
+            "Value": "*"
+          },
+          {
+            "Type": 0,
+            "Value": "saves"
+          },
+          {
+            "Type": 2,
+            "Value": "*"
+          }
+        ],
+        "Markers": [],
+        "Confidence": 0.8,
+        "AutoAdd": true
+      },
+      {
+        "Id": "e75e73e5d1cf41f6b2385f90c382b3b1",
+        "Name": "PCL2\u975E\u7248\u672C\u9694\u79BB",
+        "Segments": [
+          {
+            "Type": 3,
+            "Value": "Plain Craft Launcher 2.exe"
+          },
+          {
+            "Type": 0,
+            "Value": ".minecraft"
+          },
+          {
+            "Type": 0,
+            "Value": "saves"
+          },
+          {
+            "Type": 2,
+            "Value": "*"
+          }
+        ],
+        "Markers": [],
+        "Confidence": 0.8,
+        "AutoAdd": true
+      },
+      {
+        "Id": "83a6d55fd7d64c8ea0ebdd5eac51f6cb",
+        "Name": "PCL-CE-beta \u7248\u672C\u9694\u79BB",
+        "Segments": [
+          {
+            "Type": 3,
+            "Value": "PCL2_CE_Beta_x64.exe"
+          },
+          {
+            "Type": 0,
+            "Value": ".minecraft"
+          },
+          {
+            "Type": 0,
+            "Value": "versions"
+          },
+          {
+            "Type": 2,
+            "Value": "*"
+          },
+          {
+            "Type": 0,
+            "Value": "saves"
+          },
+          {
+            "Type": 2,
+            "Value": "*"
+          }
+        ],
+        "Markers": [],
+        "Confidence": 0.8,
+        "AutoAdd": true
+      },
+      {
+        "Id": "2bc0a7a11cc44da7891176022dde6d0a",
+        "Name": "PCL-CE-beta \u975E\u7248\u672C\u9694\u79BB",
+        "Segments": [
+          {
+            "Type": 3,
+            "Value": "PCL2_CE_Beta_x64.exe"
+          },
+          {
+            "Type": 0,
+            "Value": ".minecraft"
+          },
+          {
+            "Type": 0,
+            "Value": "saves"
+          },
+          {
+            "Type": 2,
+            "Value": "*"
+          }
+        ],
+        "Markers": [],
+        "Confidence": 0.8,
+        "AutoAdd": true
+      },
+      {
+        "Id": "df1cfcde141d4b3bafb9935e6ae12f07",
+        "Name": "PCL-CE\u975E\u7248\u672C\u9694\u79BB",
+        "Segments": [
+          {
+            "Type": 3,
+            "Value": "PCL2_CE_Release_x64.exe"
+          },
+          {
+            "Type": 0,
+            "Value": ".minecraft"
+          },
+          {
+            "Type": 0,
+            "Value": "saves"
+          },
+          {
+            "Type": 2,
+            "Value": "*"
+          }
+        ],
+        "Markers": [],
+        "Confidence": 0.8,
+        "AutoAdd": true
+      },
+      {
+        "Id": "4a5b8b518dbc4b1986944035d3938d27",
+        "Name": "PCL-CE\u7248\u672C\u9694\u79BB",
+        "Segments": [
+          {
+            "Type": 3,
+            "Value": "PCL2_CE_Release_x64.exe"
           },
           {
             "Type": 0,
