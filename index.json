@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAtUtc": "2026-03-21T07:20:53Z",
+  "generatedAtUtc": "2026-04-16T11:15:48Z",
   "templates": [
     {
       "shareCode": "Z2HJ6",
@@ -32,6 +32,22 @@
       "requiredPluginIds": [],
       "fileUrl": "templates/872ED.json",
       "sha256": "B115145584FB588823B7E3B009B4F2CE6E652079E4F1857B0678D4EA6462106D",
+      "isDisabled": false
+    },
+    {
+      "shareCode": "CS8LQ",
+      "templateId": "799f5aaed5564776b0d68f4f15cc8421",
+      "name": "PCL2启动器存档模板",
+      "author": "Leafuke",
+      "description": "自动识别PCL2默认管理的存档！注意创建新配置的时候要同时开着PCL2启动器哦。",
+      "gameName": "Minecraft",
+      "steamAppId": null,
+      "version": "1.0",
+      "updatedUtc": "2026-04-16T11:13:32.057907Z",
+      "baseConfigType": "Minecraft Saves",
+      "requiredPluginIds": [],
+      "fileUrl": "templates/CS8LQ.json",
+      "sha256": "1CE39527577FDB849EF65124DFAF35B4A6E961A22EDAB5C4A10666A5F2A28CE5",
       "isDisabled": false
     }
   ]
