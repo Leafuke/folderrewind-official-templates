@@ -1,0 +1,128 @@
+{
+  "Magic": "FolderRewindTemplate",
+  "SchemaVersion": "1.0",
+  "ExportedAtUtc": "2026-04-16T11:15:07.2764676Z",
+  "Template": {
+    "Id": "350ad9c1633840208ad6ceac2418671a",
+    "ShareId": "799f5aaed5564776b0d68f4f15cc8421",
+    "TemplateId": "799f5aaed5564776b0d68f4f15cc8421",
+    "ShareCode": "CS8LQ",
+    "Name": "PCL2\u542F\u52A8\u5668\u5B58\u6863\u6A21\u677F",
+    "Author": "Leafuke",
+    "Description": "\u81EA\u52A8\u8BC6\u522BPCL2\u9ED8\u8BA4\u7BA1\u7406\u7684\u5B58\u6863\uFF01\u6CE8\u610F\u521B\u5EFA\u65B0\u914D\u7F6E\u7684\u65F6\u5019\u8981\u540C\u65F6\u5F00\u7740PCL2\u542F\u52A8\u5668\u54E6\u3002",
+    "GameName": "Minecraft",
+    "SteamAppId": null,
+    "Version": "1.0",
+    "BaseConfigType": "Minecraft Saves",
+    "IsEncrypted": false,
+    "IconGlyph": "\uE7C1",
+    "DefaultConfigName": "PCL",
+    "CreatedUtc": "2026-04-16T11:13:07.1697433Z",
+    "UpdatedUtc": "2026-04-16T11:13:32.057907Z",
+    "Archive": {
+      "Format": "7z",
+      "CompressionLevel": 5,
+      "Method": "LZMA2",
+      "KeepCount": 10,
+      "Mode": 1,
+      "SkipIfUnchanged": true,
+      "CpuThreads": 0,
+      "BackupBeforeRestore": false,
+      "SafeRestoreEnabled": true,
+      "VerifyArchiveBeforeRestore": true,
+      "MaxSmartBackupsPerFull": 5,
+      "SafeDeleteEnabled": true,
+      "RunCompressionAtLowPriority": true,
+      "FileTypeHandlingEnabled": false,
+      "FileTypeRules": []
+    },
+    "Automation": {
+      "AutoBackupEnabled": false,
+      "IntervalMode": false,
+      "IntervalMinutes": 60,
+      "RunOnAppStart": false,
+      "ScheduledMode": false,
+      "ScheduledHour": 3,
+      "Scope": 0,
+      "TargetFolderPath": "",
+      "ConditionalModeEnabled": false,
+      "ConditionType": 0,
+      "ConditionRelativePath": "",
+      "ScheduleEntries": [],
+      "LastAutoBackupUtc": "0001-01-01T00:00:00",
+      "LastScheduledRunDateLocal": "0001-01-01T00:00:00",
+      "StopAfterNoChangeEnabled": false,
+      "StopAfterNoChangeCount": 3,
+      "ConsecutiveNoChangeCount": 0
+    },
+    "Filters": {
+      "Blacklist": [
+        "session.lock",
+        "voxy",
+        "DistantHorizons.sqlite",
+        "DistantHorizons.sqlite-shm",
+        "DistantHorizons.sqlite-wal"
+      ],
+      "UseRegex": false,
+      "RestoreWhitelist": [
+        "session.lock",
+        "voxy",
+        "DistantHorizons.sqlite",
+        "DistantHorizons.sqlite-shm",
+        "DistantHorizons.sqlite-wal"
+      ]
+    },
+    "Cloud": {
+      "Enabled": false,
+      "CommandMode": 0,
+      "TemplateKind": 0,
+      "ExecutablePath": "rclone.exe",
+      "ArgumentsTemplate": "copyto \u0022{ArchiveFilePath}\u0022 \u0022{RemoteBasePath}/{ConfigName}/{FolderName}/{ArchiveFileName}\u0022",
+      "WorkingDirectory": "",
+      "TimeoutSeconds": 600,
+      "RetryCount": 0,
+      "RemoteBasePath": "remote:FolderRewind",
+      "SyncHistoryAfterUpload": false,
+      "LastRunUtc": "0001-01-01T00:00:00",
+      "LastExitCode": 0,
+      "LastErrorMessage": ""
+    },
+    "ExtendedProperties": {},
+    "RequiredPluginIds": [],
+    "PathRules": [
+      {
+        "Id": "c404eb286f464d1483dc43721e582945",
+        "Name": "PCL2",
+        "Segments": [
+          {
+            "Type": 3,
+            "Value": "Plain Craft Launcher 2.exe"
+          },
+          {
+            "Type": 0,
+            "Value": ".minecraft"
+          },
+          {
+            "Type": 0,
+            "Value": "versions"
+          },
+          {
+            "Type": 2,
+            "Value": "*"
+          },
+          {
+            "Type": 0,
+            "Value": "saves"
+          },
+          {
+            "Type": 2,
+            "Value": "*"
+          }
+        ],
+        "Markers": [],
+        "Confidence": 0.8,
+        "AutoAdd": true
+      }
+    ]
+  }
+}
