@@ -1,12 +1,14 @@
 ﻿[简体中文](README.md) | **English**
 
-# FolderRewind Official Templates
+# FolderRewind Official Backup Presets
 
 This is the official curated template repository for [FolderRewind](https://github.com/Leafuke/FolderRewind).
 
 **FolderRewind** is a utility for managing, backing up, and restoring the states of directories. To help users quickly apply common directory rules (e.g., ignoring specific cache folders, backing up specific data directories), we set up this official template repository. Users can browse, download, and apply these reviewed, safe, and reliable official templates directly within the FolderRewind client.
 
 FolderRewind supports saving existing configurations as templates for repeated use, and completing the template sharing loop. Templates save a reusable backup scheme, including backup strategies, automation presets, filters, path rules, and more. Users can create configurations from templates via share codes or by browsing the official list. For more details, see the [Templates Creation & Usage Guide](https://folderrewind.top/docs/guides/templates) and [Template Sharing & Import Guide](https://folderrewind.top/docs/guides/template-sharing).
+
+The legacy `templates/` directory and root `index.json` are a read-only compatibility track. New contributions must use `presets/*.frpreset.json` and are published through `presets/index.json`. V1 remains available indefinitely for older clients.
 
 ## Repository Layout
 

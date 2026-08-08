@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FolderRewind Backup Preset V2 Envelope",
+  "type": "object",
+  "required": ["Magic", "SchemaVersion", "Preset"],
+  "properties": {
+    "Magic": { "const": "FolderRewindBackupPreset" },
+    "SchemaVersion": { "const": "2.0" },
+    "ExportedAtUtc": { "type": "string", "format": "date-time" },
+    "Preset": {
+      "type": "object",
+      "required": ["ShareId", "ShareCode", "Name", "Description", "Version", "BaseConfigType", "DiscoverySources"],
+      "properties": {
+        "ShareId": { "type": "string", "minLength": 1 },
+        "ShareCode": { "type": "string", "pattern": "^[A-HJ-NP-Z2-9]{5}$" },
+        "Name": { "type": "string", "minLength": 1 },
+        "Description": { "type": "string", "minLength": 1 },
+        "Version": { "type": "string", "minLength": 1 },
+        "BaseConfigType": { "type": "string", "minLength": 1 },
+        "RequiredPluginIds": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+        "IsRecommended": { "type": "boolean" },
+        "DiscoverySources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["Kind"],
+            "properties": {
+              "Kind": { "type": "integer", "enum": [0, 1] },
+              "ProviderId": { "type": "string" },
+              "DefinitionId": { "type": "string" },
+              "ExternalIds": { "type": "object", "additionalProperties": { "type": "string" } },
+              "PathRules": { "type": "array" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

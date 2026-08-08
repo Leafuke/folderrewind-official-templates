@@ -1,6 +1,6 @@
 ﻿**简体中文** | [English](README_en.md)
 
-# FolderRewind 官方模板库
+# FolderRewind 官方备份方案库
 
 这是 [FolderRewind](https://github.com/Leafuke/FolderRewind) 的官方模板仓库。
 
@@ -12,6 +12,7 @@ FolderRewind 支持将现有配置保存为模板供后续反复使用，并支�
 
 ```
 folderrewind-official-templates/
+├── presets/                       # Backup Preset V2 文件、V2 索引与 schema
 ├── templates/                     # 已通过审核的模板文件，每个分享码对应一个文件
 ├── index.json                     # 供 FolderRewind 客户端读取的轻量级索引文件
 ├── schema.json                    # 模板仓库发布时的验证结构规范 (Schema)
@@ -24,6 +25,10 @@ folderrewind-official-templates/
     │   └── rebuild-index.yml
     └── PULL_REQUEST_TEMPLATE.md
 ```
+
+`templates/` 与根目录 `index.json` 是只读兼容轨，不再接受新的 V1 贡献；它们会无限期保留，确保旧客户端仍可使用。新贡献必须使用 `presets/*.frpreset.json`，并由 `presets/index.json` 发布。
+
+V2 将“游戏在哪里”表示为 `DiscoverySources`，将归档、自动化、过滤、恢复和云端设置表示为备份策略。`ProviderReference` 只引用发现提供程序与游戏定义，不复制上游游戏数据库。
 
 ## 发布与合规规则
 
