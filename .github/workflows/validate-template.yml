@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - "templates/*.json"
+      - "presets/**"
       - "schema.json"
       - "index.json"
       - "scripts/*.py"
@@ -22,4 +23,6 @@ jobs:
           python-version: "3.11"
 
       - name: Validate templates
-        run: python scripts/validate_template.py
+        run: |
+          python scripts/validate_template.py
+          python scripts/validate_presets.py

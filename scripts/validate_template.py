@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import pathlib
 import re
 import sys
@@ -111,8 +112,19 @@ def validate_index() -> list[str]:
         errors.append("index.json is missing")
         return errors
     data = load_json(INDEX_PATH)
-    if not isinstance(data.get("templates", []), list):
+    entries = data.get("templates", [])
+    if not isinstance(entries, list):
         errors.append("index.json: templates must be an array")
+        return errors
+    for entry in entries:
+        share_code = str((entry or {}).get("shareCode") or "").upper()
+        path = TEMPLATES_DIR / f"{share_code}.json"
+        if not path.exists():
+            errors.append(f"index.json: missing template file for {share_code}")
+            continue
+        actual_hash = hashlib.sha256(path.read_bytes()).hexdigest().upper()
+        if str(entry.get("sha256") or "").upper() != actual_hash:
+            errors.append(f"index.json: hash mismatch for {share_code}")
     return errors
 
 
