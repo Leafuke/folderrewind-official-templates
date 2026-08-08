@@ -1,6 +1,77 @@
 {
   "magic": "FolderRewindBackupPresetIndex",
   "schemaVersion": "2.0",
-  "generatedAtUtc": "2026-08-08T04:12:20Z",
-  "presets": []
+  "generatedAtUtc": "2026-08-08T04:13:01Z",
+  "presets": [
+    {
+      "shareId": "53e8ddc509064382978e6689e111f065",
+      "shareCode": "Z2HJ6",
+      "name": "测试配置1",
+      "author": "Leaf",
+      "description": "111",
+      "gameName": "",
+      "steamAppId": null,
+      "version": "1.0",
+      "updatedUtc": "2026-03-20T04:33:24.6387795Z",
+      "baseConfigType": "Default",
+      "requiredPluginIds": [],
+      "contentPath": "presets/Z2HJ6.frpreset.json",
+      "sha256": "B184CEA488C54AC6A0EEE777AEB70393C30F2928838A1F48DE813CE46D7FA3A4",
+      "matches": [],
+      "isRecommended": false,
+      "isDisabled": false
+    },
+    {
+      "shareId": "a5285c1aee204a48a0bb7f5c06768c93",
+      "shareCode": "872ED",
+      "name": "Minecraft官方启动器",
+      "author": "Leafuke",
+      "description": "自动识别Java版官方启动器的MC存档！依赖MineRewind插件。",
+      "gameName": "Minecraft",
+      "steamAppId": null,
+      "version": "1.0",
+      "updatedUtc": "2026-03-21T07:09:48.7257246Z",
+      "baseConfigType": "Minecraft Saves",
+      "requiredPluginIds": [
+        "com.folderrewind.minerewind"
+      ],
+      "contentPath": "presets/872ED.frpreset.json",
+      "sha256": "36F8B603F92E35C1A355EAA1B329DEC3BAF42269BC71098728139AE3496E783C",
+      "matches": [
+        {
+          "providerId": "com.folderrewind.minerewind",
+          "definitionId": "minecraft-java",
+          "externalIds": {}
+        }
+      ],
+      "isRecommended": true,
+      "isDisabled": false
+    },
+    {
+      "shareId": "799f5aaed5564776b0d68f4f15cc8421",
+      "shareCode": "CS8LQ",
+      "name": "PCL2启动器存档模板",
+      "author": "Leafuke",
+      "description": "自动识别PCL2默认管理的存档！注意创建新配置的时候要同时开着PCL2启动器哦。",
+      "gameName": "Minecraft",
+      "steamAppId": null,
+      "version": "1.0",
+      "updatedUtc": "2026-04-16T11:33:55.2453929Z",
+      "baseConfigType": "Minecraft Saves",
+      "requiredPluginIds": [
+        "com.folderrewind.minerewind"
+      ],
+      "contentPath": "presets/CS8LQ.frpreset.json",
+      "sha256": "6E1D28B0BD5F2934501E771E3198F62268503B85077E5CAA31033A39AACF73D9",
+      "matches": [
+        {
+          "providerId": "com.folderrewind.minerewind",
+          "definitionId": "minecraft-java",
+          "externalIds": {}
+        }
+      ],
+      "isRecommended": false,
+      "isDisabled": false
+    }
+  ]
 }

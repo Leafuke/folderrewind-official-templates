@@ -1,0 +1,93 @@
+{
+  "Magic": "FolderRewindBackupPreset",
+  "SchemaVersion": "2.0",
+  "ExportedAtUtc": "2026-03-21T07:20:22.8889452Z",
+  "Preset": {
+    "Id": "b4e55a131e894b85b2235d151902b262",
+    "ShareId": "a5285c1aee204a48a0bb7f5c06768c93",
+    "ShareCode": "872ED",
+    "Name": "Minecraft官方启动器",
+    "Author": "Leafuke",
+    "Description": "自动识别Java版官方启动器的MC存档！依赖MineRewind插件。",
+    "GameName": "Minecraft",
+    "SteamAppId": null,
+    "Version": "1.0",
+    "BaseConfigType": "Minecraft Saves",
+    "IsEncrypted": false,
+    "IconGlyph": "",
+    "DefaultConfigName": "Minecraft官方启动器",
+    "CreatedUtc": "2026-03-21T07:02:13.6370333Z",
+    "UpdatedUtc": "2026-03-21T07:09:48.7257246Z",
+    "Archive": {
+      "Format": "7z",
+      "CompressionLevel": 3,
+      "Method": "LZMA2",
+      "KeepCount": 10,
+      "Mode": 0,
+      "SkipIfUnchanged": true,
+      "CpuThreads": 0,
+      "BackupBeforeRestore": false,
+      "SafeRestoreEnabled": true,
+      "VerifyArchiveBeforeRestore": true,
+      "MaxSmartBackupsPerFull": 5,
+      "SafeDeleteEnabled": true,
+      "FileTypeHandlingEnabled": false,
+      "FileTypeRules": []
+    },
+    "Automation": {
+      "AutoBackupEnabled": false,
+      "IntervalMode": true,
+      "IntervalMinutes": 60,
+      "RunOnAppStart": false,
+      "ScheduledMode": false,
+      "ScheduledHour": 3,
+      "ScheduleEntries": [],
+      "LastAutoBackupUtc": "0001-01-01T00:00:00",
+      "LastScheduledRunDateLocal": "0001-01-01T00:00:00",
+      "StopAfterNoChangeEnabled": false,
+      "StopAfterNoChangeCount": 3,
+      "ConsecutiveNoChangeCount": 0
+    },
+    "Filters": {
+      "Blacklist": [
+        "session.lock",
+        "voxy"
+      ],
+      "UseRegex": false,
+      "RestoreWhitelist": [
+        "session.lock",
+        "voxy"
+      ]
+    },
+    "Cloud": {
+      "Enabled": false,
+      "CommandMode": 0,
+      "TemplateKind": 0,
+      "ExecutablePath": "rclone.exe",
+      "ArgumentsTemplate": "copyto \"{ArchiveFilePath}\" \"{RemoteBasePath}/{ConfigName}/{FolderName}/{ArchiveFileName}\"",
+      "WorkingDirectory": "",
+      "TimeoutSeconds": 600,
+      "RetryCount": 0,
+      "RemoteBasePath": "remote:FolderRewind",
+      "LastRunUtc": "0001-01-01T00:00:00",
+      "LastExitCode": 0,
+      "LastErrorMessage": ""
+    },
+    "ExtendedProperties": {},
+    "RequiredPluginIds": [
+      "com.folderrewind.minerewind"
+    ],
+    "PathRules": [],
+    "DiscoverySources": [
+      {
+        "Kind": 1,
+        "ProviderId": "com.folderrewind.minerewind",
+        "DefinitionId": "minecraft-java",
+        "PathRules": [],
+        "ExternalIds": {},
+        "Properties": {}
+      }
+    ],
+    "IsRecommended": true
+  }
+}

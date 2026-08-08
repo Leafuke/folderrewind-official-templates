@@ -1,0 +1,464 @@
+{
+  "Magic": "FolderRewindBackupPreset",
+  "SchemaVersion": "2.0",
+  "ExportedAtUtc": "2026-04-16T11:34:26.2227371Z",
+  "Preset": {
+    "Id": "350ad9c1633840208ad6ceac2418671a",
+    "ShareId": "799f5aaed5564776b0d68f4f15cc8421",
+    "ShareCode": "CS8LQ",
+    "Name": "PCL2启动器存档模板",
+    "Author": "Leafuke",
+    "Description": "自动识别PCL2默认管理的存档！注意创建新配置的时候要同时开着PCL2启动器哦。",
+    "GameName": "Minecraft",
+    "SteamAppId": null,
+    "Version": "1.0",
+    "BaseConfigType": "Minecraft Saves",
+    "IsEncrypted": false,
+    "IconGlyph": "",
+    "DefaultConfigName": "PCL",
+    "CreatedUtc": "2026-04-16T11:13:07.1697433Z",
+    "UpdatedUtc": "2026-04-16T11:33:55.2453929Z",
+    "Archive": {
+      "Format": "7z",
+      "CompressionLevel": 5,
+      "Method": "LZMA2",
+      "KeepCount": 10,
+      "Mode": 1,
+      "SkipIfUnchanged": true,
+      "CpuThreads": 0,
+      "BackupBeforeRestore": false,
+      "SafeRestoreEnabled": true,
+      "VerifyArchiveBeforeRestore": true,
+      "MaxSmartBackupsPerFull": 5,
+      "SafeDeleteEnabled": true,
+      "RunCompressionAtLowPriority": true,
+      "FileTypeHandlingEnabled": false,
+      "FileTypeRules": []
+    },
+    "Automation": {
+      "AutoBackupEnabled": false,
+      "IntervalMode": false,
+      "IntervalMinutes": 60,
+      "RunOnAppStart": false,
+      "ScheduledMode": false,
+      "ScheduledHour": 3,
+      "Scope": 0,
+      "TargetFolderPath": "",
+      "ConditionalModeEnabled": false,
+      "ConditionType": 0,
+      "ConditionRelativePath": "",
+      "ScheduleEntries": [],
+      "LastAutoBackupUtc": "0001-01-01T00:00:00",
+      "LastScheduledRunDateLocal": "0001-01-01T00:00:00",
+      "StopAfterNoChangeEnabled": false,
+      "StopAfterNoChangeCount": 3,
+      "ConsecutiveNoChangeCount": 0
+    },
+    "Filters": {
+      "Blacklist": [
+        "session.lock",
+        "voxy",
+        "DistantHorizons.sqlite",
+        "DistantHorizons.sqlite-shm",
+        "DistantHorizons.sqlite-wal"
+      ],
+      "UseRegex": false,
+      "RestoreWhitelist": [
+        "session.lock",
+        "voxy",
+        "DistantHorizons.sqlite",
+        "DistantHorizons.sqlite-shm",
+        "DistantHorizons.sqlite-wal"
+      ]
+    },
+    "Cloud": {
+      "Enabled": false,
+      "CommandMode": 0,
+      "TemplateKind": 0,
+      "ExecutablePath": "rclone.exe",
+      "ArgumentsTemplate": "copyto \"{ArchiveFilePath}\" \"{RemoteBasePath}/{ConfigName}/{FolderName}/{ArchiveFileName}\"",
+      "WorkingDirectory": "",
+      "TimeoutSeconds": 600,
+      "RetryCount": 0,
+      "RemoteBasePath": "remote:FolderRewind",
+      "SyncHistoryAfterUpload": false,
+      "LastRunUtc": "0001-01-01T00:00:00",
+      "LastExitCode": 0,
+      "LastErrorMessage": ""
+    },
+    "ExtendedProperties": {},
+    "RequiredPluginIds": [
+      "com.folderrewind.minerewind"
+    ],
+    "PathRules": [
+      {
+        "Id": "c404eb286f464d1483dc43721e582945",
+        "Name": "PCL2版本隔离规则",
+        "Segments": [
+          {
+            "Type": 3,
+            "Value": "Plain Craft Launcher 2.exe"
+          },
+          {
+            "Type": 0,
+            "Value": ".minecraft"
+          },
+          {
+            "Type": 0,
+            "Value": "versions"
+          },
+          {
+            "Type": 2,
+            "Value": "*"
+          },
+          {
+            "Type": 0,
+            "Value": "saves"
+          },
+          {
+            "Type": 2,
+            "Value": "*"
+          }
+        ],
+        "Markers": [],
+        "Confidence": 0.8,
+        "AutoAdd": true
+      },
+      {
+        "Id": "e75e73e5d1cf41f6b2385f90c382b3b1",
+        "Name": "PCL2非版本隔离",
+        "Segments": [
+          {
+            "Type": 3,
+            "Value": "Plain Craft Launcher 2.exe"
+          },
+          {
+            "Type": 0,
+            "Value": ".minecraft"
+          },
+          {
+            "Type": 0,
+            "Value": "saves"
+          },
+          {
+            "Type": 2,
+            "Value": "*"
+          }
+        ],
+        "Markers": [],
+        "Confidence": 0.8,
+        "AutoAdd": true
+      },
+      {
+        "Id": "83a6d55fd7d64c8ea0ebdd5eac51f6cb",
+        "Name": "PCL-CE-beta 版本隔离",
+        "Segments": [
+          {
+            "Type": 3,
+            "Value": "PCL2_CE_Beta_x64.exe"
+          },
+          {
+            "Type": 0,
+            "Value": ".minecraft"
+          },
+          {
+            "Type": 0,
+            "Value": "versions"
+          },
+          {
+            "Type": 2,
+            "Value": "*"
+          },
+          {
+            "Type": 0,
+            "Value": "saves"
+          },
+          {
+            "Type": 2,
+            "Value": "*"
+          }
+        ],
+        "Markers": [],
+        "Confidence": 0.8,
+        "AutoAdd": true
+      },
+      {
+        "Id": "2bc0a7a11cc44da7891176022dde6d0a",
+        "Name": "PCL-CE-beta 非版本隔离",
+        "Segments": [
+          {
+            "Type": 3,
+            "Value": "PCL2_CE_Beta_x64.exe"
+          },
+          {
+            "Type": 0,
+            "Value": ".minecraft"
+          },
+          {
+            "Type": 0,
+            "Value": "saves"
+          },
+          {
+            "Type": 2,
+            "Value": "*"
+          }
+        ],
+        "Markers": [],
+        "Confidence": 0.8,
+        "AutoAdd": true
+      },
+      {
+        "Id": "df1cfcde141d4b3bafb9935e6ae12f07",
+        "Name": "PCL-CE非版本隔离",
+        "Segments": [
+          {
+            "Type": 3,
+            "Value": "PCL2_CE_Release_x64.exe"
+          },
+          {
+            "Type": 0,
+            "Value": ".minecraft"
+          },
+          {
+            "Type": 0,
+            "Value": "saves"
+          },
+          {
+            "Type": 2,
+            "Value": "*"
+          }
+        ],
+        "Markers": [],
+        "Confidence": 0.8,
+        "AutoAdd": true
+      },
+      {
+        "Id": "4a5b8b518dbc4b1986944035d3938d27",
+        "Name": "PCL-CE版本隔离",
+        "Segments": [
+          {
+            "Type": 3,
+            "Value": "PCL2_CE_Release_x64.exe"
+          },
+          {
+            "Type": 0,
+            "Value": ".minecraft"
+          },
+          {
+            "Type": 0,
+            "Value": "versions"
+          },
+          {
+            "Type": 2,
+            "Value": "*"
+          },
+          {
+            "Type": 0,
+            "Value": "saves"
+          },
+          {
+            "Type": 2,
+            "Value": "*"
+          }
+        ],
+        "Markers": [],
+        "Confidence": 0.8,
+        "AutoAdd": true
+      }
+    ],
+    "DiscoverySources": [
+      {
+        "Kind": 1,
+        "ProviderId": "com.folderrewind.minerewind",
+        "DefinitionId": "minecraft-java",
+        "PathRules": [],
+        "ExternalIds": {},
+        "Properties": {}
+      },
+      {
+        "Kind": 0,
+        "ProviderId": "",
+        "DefinitionId": "",
+        "PathRules": [
+          {
+            "Id": "c404eb286f464d1483dc43721e582945",
+            "Name": "PCL2版本隔离规则",
+            "Segments": [
+              {
+                "Type": 3,
+                "Value": "Plain Craft Launcher 2.exe"
+              },
+              {
+                "Type": 0,
+                "Value": ".minecraft"
+              },
+              {
+                "Type": 0,
+                "Value": "versions"
+              },
+              {
+                "Type": 2,
+                "Value": "*"
+              },
+              {
+                "Type": 0,
+                "Value": "saves"
+              },
+              {
+                "Type": 2,
+                "Value": "*"
+              }
+            ],
+            "Markers": [],
+            "Confidence": 0.8,
+            "AutoAdd": true
+          },
+          {
+            "Id": "e75e73e5d1cf41f6b2385f90c382b3b1",
+            "Name": "PCL2非版本隔离",
+            "Segments": [
+              {
+                "Type": 3,
+                "Value": "Plain Craft Launcher 2.exe"
+              },
+              {
+                "Type": 0,
+                "Value": ".minecraft"
+              },
+              {
+                "Type": 0,
+                "Value": "saves"
+              },
+              {
+                "Type": 2,
+                "Value": "*"
+              }
+            ],
+            "Markers": [],
+            "Confidence": 0.8,
+            "AutoAdd": true
+          },
+          {
+            "Id": "83a6d55fd7d64c8ea0ebdd5eac51f6cb",
+            "Name": "PCL-CE-beta 版本隔离",
+            "Segments": [
+              {
+                "Type": 3,
+                "Value": "PCL2_CE_Beta_x64.exe"
+              },
+              {
+                "Type": 0,
+                "Value": ".minecraft"
+              },
+              {
+                "Type": 0,
+                "Value": "versions"
+              },
+              {
+                "Type": 2,
+                "Value": "*"
+              },
+              {
+                "Type": 0,
+                "Value": "saves"
+              },
+              {
+                "Type": 2,
+                "Value": "*"
+              }
+            ],
+            "Markers": [],
+            "Confidence": 0.8,
+            "AutoAdd": true
+          },
+          {
+            "Id": "2bc0a7a11cc44da7891176022dde6d0a",
+            "Name": "PCL-CE-beta 非版本隔离",
+            "Segments": [
+              {
+                "Type": 3,
+                "Value": "PCL2_CE_Beta_x64.exe"
+              },
+              {
+                "Type": 0,
+                "Value": ".minecraft"
+              },
+              {
+                "Type": 0,
+                "Value": "saves"
+              },
+              {
+                "Type": 2,
+                "Value": "*"
+              }
+            ],
+            "Markers": [],
+            "Confidence": 0.8,
+            "AutoAdd": true
+          },
+          {
+            "Id": "df1cfcde141d4b3bafb9935e6ae12f07",
+            "Name": "PCL-CE非版本隔离",
+            "Segments": [
+              {
+                "Type": 3,
+                "Value": "PCL2_CE_Release_x64.exe"
+              },
+              {
+                "Type": 0,
+                "Value": ".minecraft"
+              },
+              {
+                "Type": 0,
+                "Value": "saves"
+              },
+              {
+                "Type": 2,
+                "Value": "*"
+              }
+            ],
+            "Markers": [],
+            "Confidence": 0.8,
+            "AutoAdd": true
+          },
+          {
+            "Id": "4a5b8b518dbc4b1986944035d3938d27",
+            "Name": "PCL-CE版本隔离",
+            "Segments": [
+              {
+                "Type": 3,
+                "Value": "PCL2_CE_Release_x64.exe"
+              },
+              {
+                "Type": 0,
+                "Value": ".minecraft"
+              },
+              {
+                "Type": 0,
+                "Value": "versions"
+              },
+              {
+                "Type": 2,
+                "Value": "*"
+              },
+              {
+                "Type": 0,
+                "Value": "saves"
+              },
+              {
+                "Type": 2,
+                "Value": "*"
+              }
+            ],
+            "Markers": [],
+            "Confidence": 0.8,
+            "AutoAdd": true
+          }
+        ],
+        "ExternalIds": {},
+        "Properties": {}
+      }
+    ],
+    "IsRecommended": false
+  }
+}

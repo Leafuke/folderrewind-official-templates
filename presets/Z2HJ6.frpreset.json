@@ -1,0 +1,121 @@
+{
+  "Magic": "FolderRewindBackupPreset",
+  "SchemaVersion": "2.0",
+  "ExportedAtUtc": "2026-03-20T04:51:29.823958Z",
+  "Preset": {
+    "Id": "c994034257cd439a8c57451d2e965d6f",
+    "ShareId": "53e8ddc509064382978e6689e111f065",
+    "ShareCode": "Z2HJ6",
+    "Name": "测试配置1",
+    "Author": "Leaf",
+    "Description": "111",
+    "GameName": "",
+    "SteamAppId": null,
+    "Version": "1.0",
+    "BaseConfigType": "Default",
+    "IsEncrypted": false,
+    "IconGlyph": "",
+    "DefaultConfigName": "测试配置",
+    "CreatedUtc": "2026-03-20T01:53:52.3815894Z",
+    "UpdatedUtc": "2026-03-20T04:33:24.6387795Z",
+    "Archive": {
+      "Format": "7z",
+      "CompressionLevel": 3,
+      "Method": "LZMA2",
+      "KeepCount": 10,
+      "Mode": 0,
+      "SkipIfUnchanged": true,
+      "CpuThreads": 0,
+      "BackupBeforeRestore": false,
+      "SafeRestoreEnabled": true,
+      "VerifyArchiveBeforeRestore": true,
+      "MaxSmartBackupsPerFull": 5,
+      "SafeDeleteEnabled": true,
+      "FileTypeHandlingEnabled": false,
+      "FileTypeRules": []
+    },
+    "Automation": {
+      "AutoBackupEnabled": false,
+      "IntervalMode": true,
+      "IntervalMinutes": 60,
+      "RunOnAppStart": false,
+      "ScheduledMode": false,
+      "ScheduledHour": 3,
+      "ScheduleEntries": [],
+      "LastAutoBackupUtc": "0001-01-01T00:00:00",
+      "LastScheduledRunDateLocal": "0001-01-01T00:00:00",
+      "StopAfterNoChangeEnabled": false,
+      "StopAfterNoChangeCount": 3,
+      "ConsecutiveNoChangeCount": 0
+    },
+    "Filters": {
+      "Blacklist": [],
+      "UseRegex": false,
+      "RestoreWhitelist": []
+    },
+    "Cloud": {
+      "Enabled": false,
+      "CommandMode": 0,
+      "TemplateKind": 0,
+      "ExecutablePath": "rclone.exe",
+      "ArgumentsTemplate": "copyto \"{ArchiveFilePath}\" \"{RemoteBasePath}/{ConfigName}/{FolderName}/{ArchiveFileName}\"",
+      "WorkingDirectory": "",
+      "TimeoutSeconds": 600,
+      "RetryCount": 0,
+      "RemoteBasePath": "remote:FolderRewind",
+      "LastRunUtc": "0001-01-01T00:00:00",
+      "LastExitCode": 0,
+      "LastErrorMessage": ""
+    },
+    "ExtendedProperties": {},
+    "RequiredPluginIds": [],
+    "PathRules": [
+      {
+        "Id": "3f47c53faa39491e84526bc6a7151d35",
+        "Name": "Books",
+        "Segments": [
+          {
+            "Type": 1,
+            "Value": "Documents"
+          },
+          {
+            "Type": 0,
+            "Value": "Books"
+          }
+        ],
+        "Markers": [],
+        "Confidence": 0.6,
+        "AutoAdd": false
+      }
+    ],
+    "DiscoverySources": [
+      {
+        "Kind": 0,
+        "ProviderId": "",
+        "DefinitionId": "",
+        "PathRules": [
+          {
+            "Id": "3f47c53faa39491e84526bc6a7151d35",
+            "Name": "Books",
+            "Segments": [
+              {
+                "Type": 1,
+                "Value": "Documents"
+              },
+              {
+                "Type": 0,
+                "Value": "Books"
+              }
+            ],
+            "Markers": [],
+            "Confidence": 0.6,
+            "AutoAdd": false
+          }
+        ],
+        "ExternalIds": {},
+        "Properties": {}
+      }
+    ],
+    "IsRecommended": false
+  }
+}
