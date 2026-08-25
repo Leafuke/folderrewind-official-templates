@@ -1,73 +1,100 @@
-﻿**简体中文** | [English](README_en.md)
+**简体中文** | [English](README_en.md)
 
 # FolderRewind 官方备份方案库
 
-这是 [FolderRewind](https://github.com/Leafuke/FolderRewind) 的官方模板仓库。
-
-**FolderRewind** 是一款用于管理、备份和恢复目录状态的实用工具。为了方便用户快速应用常用的目录规则（如忽略特定缓存文件夹、备份特定数据目录），我们设立了此官方模板库。用户可以直接在 FolderRewind 客户端中浏览、下载和应用这些经过审核的、安全可靠的官方模板。
-
-FolderRewind 支持将现有配置保存为模板供后续反复使用，并支持模板分享。模板不仅记录配置名称，还会保存一整套可复用的备份方案，例如备份策略、自动化触发器、过滤器设定、路径规则以及各类插件扩展属性等。你可以通过分享码或直接在这个官方库列表中轻松发现并导入别人的实用经验。关于如何在本地制作、修改模板，或是如何将其分享给社区的其他小伙伴，可以参阅[模板：创建与使用](https://folderrewind.top/docs/guides/templates)以及[模板：分享与导入](https://folderrewind.top/docs/guides/template-sharing)。
+这是 [FolderRewind](https://github.com/Leafuke/FolderRewind) 的官方 Backup Preset 仓库。新客户端通过本仓库发现、校验并导入经过审核的备份策略；旧版 Template V1 继续作为只读兼容轨提供。
 
 ## 仓库结构
 
-```
+```text
 folderrewind-official-templates/
-├── presets/                       # Backup Preset V2 文件、V2 索引与 schema
-├── templates/                     # 已通过审核的模板文件，每个分享码对应一个文件
-├── index.json                     # 供 FolderRewind 客户端读取的轻量级索引文件
-├── schema.json                    # 模板仓库发布时的验证结构规范 (Schema)
+├── presets/                       # Backup Preset V2 文件、索引和 schema
+│   ├── {ShareCode}.frpreset.json
+│   ├── index.json
+│   └── schema.json
+├── templates/                     # 只读 Template V1 兼容文件
+├── index.json                     # V1 兼容索引
+├── schema.json                    # V1 兼容 schema
 ├── scripts/
-│   ├── validate_template.py       # PR 验证入口脚本，用于验证新提交的模板是否合规
-│   └── rebuild_index.py           # 重建脚本，将 templates/ 目录下的文件打包到 index.json
+│   ├── validate_presets.py
+│   ├── rebuild_preset_index.py
+│   ├── validate_template.py
+│   └── rebuild_index.py
 └── .github/
-    ├── workflows/
-    │   ├── validate-template.yml
-    │   └── rebuild-index.yml
-    └── PULL_REQUEST_TEMPLATE.md
 ```
 
-`templates/` 与根目录 `index.json` 是只读兼容轨，不再接受新的 V1 贡献；它们会无限期保留，确保旧客户端仍可使用。新贡献必须使用 `presets/*.frpreset.json`，并由 `presets/index.json` 发布。
+新贡献必须使用 `presets/{ShareCode}.frpreset.json`，并通过生成的 `presets/index.json` 发布。不要向 `templates/` 添加新的 V1 文件，也不要手工编辑两个生成索引。
 
-V2 将“游戏在哪里”表示为 `DiscoverySources`，将归档、自动化、过滤、恢复和云端设置表示为备份策略。`ProviderReference` 只引用发现提供程序与游戏定义，不复制上游游戏数据库。
+## Backup Preset V2 契约
 
-## 发布与合规规则
+V2 把两类信息分开：
 
-- 	emplates/ 目录中的每个文件必须命名为 {ShareCode}.json（例如 A1B2C.json）。
-- **分享码 (ShareCode)** 必须由 5 个字符组成，字符范围为 A-HJ-NP-Z2-9（排除了容易混淆的字符）。
-- 文件的顶层结构必须符合 FolderRewind 模板包的要求：
-  - Magic = "FolderRewindTemplate" （魔术字符串标识）
-  - SchemaVersion （架构版本）
-  - Template （模板对象）
-- Template.TemplateId 是追踪更新的唯一稳定标识符。
-- Template.ShareCode 必须与文件名严格一致。
-- 必须包含 Template.Name（名称）、Template.Description（描述），以及至少一条路径规则 (PathRule)。
-- **安全检查**：包含危险路径（如绝对路径、.. 上级目录跳转，或系统核心目录）的提交将被直接拒绝。
+- `DiscoverySources` 描述“数据在哪里”。
+- Archive、Automation、Filters、BackupScope、Cloud 等字段描述“如何备份”。
 
-## 客户端交互约定
+### 身份定义
 
-FolderRewind 应用程序仅依赖此仓库的 index.json 文件即可完成以下操作：
-- 浏览官方精选模板列表
-- 解析和查找分享码 (Share Codes)
-- 验证下载模板的哈希有效性
+`ProviderReference.ProviderId` 是稳定的 Discovery Provider 身份。
 
-当用户在客户端选择一个模板时，应用程序将直接从 	emplates/{ShareCode}.json 下载匹配的文件，验证其 sha256 校验和，最后将其导入到本地的模板库中供使用。
+`ProviderReference.DefinitionId` 是该 Provider 自己声明的稳定游戏定义身份。
 
-## 审核与提交流程
+例如：
 
-如果您想向官方库贡献模板，请遵循以下流程：
+```text
+ProviderId   = com.folderrewind.minerewind
+DefinitionId = minecraft-java
+```
 
-1. 贡献者在 	emplates/ 目录下提交一个新的或修改现有的模板文件 (PR)。
-2. GitHub Actions (validate-template.yml) 将自动执行以下检查：
-   - 文件名及分享码格式是否合规
-   - JSON 结构体是否符合规范
-   - 必填字段是否遗漏
-   - 是否存在重复的分享码
-   - 是否包含危险的路径规则
-3. 仓库维护者对 PR 进行人工 Review。
-4. PR 合并到主分支后，
-ebuild-index.yml 将自动运行并重新生成发布的 index.json 文件。
+以下身份不能混用：
 
-## 注意事项
+- `CandidateId` 标识某个实际发现候选，不等于 DefinitionId。
+- `ConfigKindId` 标识配置执行语义，不等于 DefinitionId。
+- `PluginId` 标识插件包；它可以与 ProviderId 不同。
+- MineRewind 当前的 PluginId 与 ProviderId 恰好相同，这不是通用约束。
 
-- index.json 是通过脚本自动生成的。除非您清楚自己在做什么，否则**不要手动编辑此文件**。
-- schema.json 只是本仓库发布流程的安全契约。为了保证安全，FolderRewind 客户端在下载模板后，在运行时依然会/应当独立验证其内容的安全性。
+不要为匹配而杜撰 Steam ID 或其他 ExternalIds。ExternalIds 只能填写可验证、长期稳定的真实标识。
+
+### 1.9.x 应用语义
+
+| DiscoverySources | 手工应用行为 |
+| --- | --- |
+| 只有 InlinePathRules | 客户端直接解析路径并让用户确认 |
+| 只有 ProviderReference | 客户端执行定向 Discovery，再 review/commit |
+| ProviderReference + InlinePathRules | 手工应用使用 inline rules；Game Discovery 使用 ProviderReference 关联已发现资源 |
+
+ProviderReference-only Preset 不得通过空 PathRules 直接创建配置，也不应添加不可靠的 fallback PathRules。
+
+872ED 是合法的 provider-only 代表：
+
+```text
+ProviderId    = com.folderrewind.minerewind
+DefinitionId  = minecraft-java
+PathRules     = []
+IsRecommended = true
+```
+
+## V2 发布规则
+
+- 文件名必须为 `{ShareCode}.frpreset.json`。
+- ShareCode 为 5 位 `A-HJ-NP-Z2-9` 字符。
+- `Preset.ShareCode` 必须与文件名一致。
+- `ShareId` 是跨版本跟踪更新的稳定身份。
+- Preset 必须包含名称、描述和至少一个有效 DiscoverySource。
+- InlinePathRules 不得包含绝对路径、上级目录跳转或危险系统根目录。
+- ProviderReference 必须同时包含 ProviderId 与 DefinitionId。
+- RequiredPluginIds 应列出应用策略所必需的插件，但不能代替 ProviderReference。
+
+## 审核与生成
+
+提交前运行：
+
+```powershell
+python scripts/validate_template.py
+python scripts/validate_presets.py
+python scripts/rebuild_index.py
+python scripts/rebuild_preset_index.py
+```
+
+确认生成结果只有预期差异后再提交。PR 会再次运行 V1/V2 校验；合并到 `main` 后，工作流会重建发布索引。
+
+客户端仍必须对下载内容做独立的 schema、哈希、路径安全、Provider 可用性和最终非空来源检查；仓库审核不能替代运行时防线。
